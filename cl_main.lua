@@ -1,4 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
 local hunger = 45
 local thirst = 45
 
