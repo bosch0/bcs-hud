@@ -44,14 +44,14 @@ CreateThread(function()
 		local radarEnabled = IsRadarEnabled()
         local player = PlayerPedId()
 		if not IsPedInAnyVehicle(player) and radarEnabled then
-            SendNUIMessage({
-                action = 'notinveh'
-            })
+		        SendNUIMessage({
+			    action = 'notinveh'
+		        })
 			DisplayRadar(false)
 		elseif IsPedInAnyVehicle(player) and not radarEnabled then
-            SendNUIMessage({
-                action = 'inveh'
-            })
+		        SendNUIMessage({
+			    action = 'inveh'
+		        })
 			DisplayRadar(true)
 		end
 		Wait(500)
