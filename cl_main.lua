@@ -1,5 +1,5 @@
-local hunger = 45
-local thirst = 45
+local hunger = 100
+local thirst = 100
 
 -- @main
 
