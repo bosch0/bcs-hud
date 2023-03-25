@@ -1,0 +1,53 @@
+body {
+    overflow: hidden;
+}
+
+.hud-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 8vw;
+    bottom: 2vw;
+    left: 1.5vw;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: .3vh;
+    box-shadow: 0 0 1vh black;
+    padding: 0 .2vw 0 .2vw;
+    transition: ease .5s;
+    animation: hud-enter .5s;
+}
+
+.hud {
+    width: 100%;
+    height: 2vh;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: .3vh;
+    margin: .3vh 0 .3vh 0;
+    transition: ease .5s;
+}
+
+.hud-bar {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: .2vh;
+    transition: ease 1s;
+}
+
+.icon {
+    position: absolute;
+    margin-top: .25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 0 0 .5vh black;
+}
+
+@keyframes hud-enter {
+    from {
+        opacity: 0;
+        transform: translateX(-2vw);
+    }
+}
