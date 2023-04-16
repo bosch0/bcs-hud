@@ -3,14 +3,7 @@ local thirst = 100
 
 -- @main
 
-if HUD.framework == 'ESX' then
-    TriggerEvent('esx_status:getStatus', 'hunger', function(status)
-        if status then hunger = status.val / 10000 end
-    end)
-    TriggerEvent('esx_status:getStatus', 'thirst', function(status)
-        if status then thirst = status.val / 10000 end
-    end)
-elseif HUD.framework == 'QB-Core' then
+if HUD.framework == 'QB-Core' then
     RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst)
         hunger = newHunger
         thirst = newThirst
@@ -34,6 +27,14 @@ CreateThread(function ()
                 toggle = false
             })
         end
+	if HUD.framework == 'ESX' then
+	    TriggerEvent('esx_status:getStatus', 'hunger', function(status)
+		if status then hunger = status.val / 10000 end
+	    end)
+	    TriggerEvent('esx_status:getStatus', 'thirst', function(status)
+		if status then thirst = status.val / 10000 end
+	    end)	
+	end
         Wait(1000)
     end
 end)
